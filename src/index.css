@@ -1,13 +1,82 @@
+/* General Styles */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Arial, sans-serif;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  font: 14px "Century Gothic", Futura, sans-serif;
+}
+h1 {
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 10px; /* Optional: add some padding */
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 100%;
+  max-width: 500px; /* Set a maximum width for large screens */
+  max-height: 500px; /* Set a maximum height for large screens */
+  gap: 0; /* Remove space between cells */
+  aspect-ratio: 1; /* Maintain square aspect ratio */
+}
+
+.square {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  /* Ensure squares fill the grid cell */
+  padding: 0;
+  box-sizing: border-box; /* Ensure border is included in element's width/height */
+  aspect-ratio: 1; /* Keep squares square */
+  min-height: 90px;
+}
+
+/* Ensure responsiveness */
+@media (max-width: 600px) {
+  .board {
+    max-width: 100%;
+    max-height: 100%;
+    
+  }
+  
+  .square {
+    font-size: 5em; /* Larger text on mobile for better visibility */
+  }
+}
+
+ol, ul {
+  padding-left: 0;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game-info {
+  margin-left: 20px;
 }
