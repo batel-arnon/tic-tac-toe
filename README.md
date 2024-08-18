@@ -1,3 +1,1 @@
-# Games
-this is my games site. here i will add new games
-
+this is tic tac toe game on the web
